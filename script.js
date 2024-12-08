@@ -1,6 +1,3 @@
-let humanScore = 0;
-let computerScore = 0;
-
 function getComputerChoice() {
     let randNum = 3 * Math.random();
 
@@ -27,22 +24,28 @@ function getHumanChoice() {
     }
 }
 
-function playRound(humanChoice, computerChoice) {
-    if (humanChoice === computerChoice) {
-        return;
-    } else if (humanChoice == "rock" && computerChoice == "scissors" 
-        || humanChoice == "paper" && computerChoice == "rock"
-        || humanChoice == "scissors" && computerChoice == "paper") {
-        humanScore++;
-    } else {
-        computerScore++;
+function playGame() {
+    let humanScore = 0;
+    let computerScore = 0;
+
+    for (let i = 0; i < 5; i++) {
+        playRound(getHumanChoice(), getComputerChoice());
+    }
+
+    console.log("Human:" + String(humanScore));
+    console.log("Computer:" +String(computerScore));
+
+    function playRound(humanChoice, computerChoice) {
+        if (humanChoice === computerChoice) {
+            return;
+        } else if (humanChoice == "rock" && computerChoice == "scissors" 
+            || humanChoice == "paper" && computerChoice == "rock"
+            || humanChoice == "scissors" && computerChoice == "paper") {
+            humanScore++;
+        } else {
+            computerScore++;
+        }
     }
 }
 
-const humanSelection = getHumanChoice();
-const computerSelection = getComputerChoice();
-
-playRound(humanSelection, computerSelection);
-
-console.log("Human:" + String(humanScore));
-console.log("Computer:" +String(computerScore));
+playGame();
