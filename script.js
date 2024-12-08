@@ -1,3 +1,6 @@
+let humanScore = 0;
+let computerScore = 0;
+
 function getComputerChoice() {
     let randNum = 3 * Math.random();
 
@@ -16,7 +19,7 @@ function getHumanChoice() {
     while (true) {
         userChoice = prompt("Rock, Paper or Scissors?").toLowerCase();
 
-        if (userChoice === "rock" || (userChoice === "paper" || userChoice ==="scissors")) {
+        if (userChoice === "rock" || userChoice === "paper" || userChoice ==="scissors") {
             return userChoice;
         } else {
             alert("Invalid choice. Please type 'Rock', 'Paper' or 'Scissors'.")
