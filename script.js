@@ -26,3 +26,23 @@ function getHumanChoice() {
         }
     }
 }
+
+function playRound(humanChoice, computerChoice) {
+    if (humanChoice === computerChoice) {
+        return;
+    } else if (humanChoice == "rock" && computerChoice == "scissors" 
+        || humanChoice == "paper" && computerChoice == "rock"
+        || humanChoice == "scissors" && computerChoice == "paper") {
+        humanScore++;
+    } else {
+        computerScore++;
+    }
+}
+
+const humanSelection = getHumanChoice();
+const computerSelection = getComputerChoice();
+
+playRound(humanSelection, computerSelection);
+
+console.log("Human:" + String(humanScore));
+console.log("Computer:" +String(computerScore));
