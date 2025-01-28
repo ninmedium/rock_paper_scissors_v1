@@ -24,15 +24,15 @@ function getHumanChoice() {
     }
 }
 
-function playGame() {
-    let humanScore = 0;
-    let computerScore = 0;
+// function playGame() {
+//     let humanScore = 0;
+//     let computerScore = 0;
 
-    for (let i = 0; i < 5; i++) {
-        playRound(getHumanChoice(), getComputerChoice());
-        console.log("Human:" + String(humanScore));
-        console.log("Computer:" +String(computerScore));
-    }
+//     for (let i = 0; i < 5; i++) {
+//         playRound(getHumanChoice(), getComputerChoice());
+//         console.log("Human:" + String(humanScore));
+//         console.log("Computer:" +String(computerScore));
+//     }
 
     function playRound(humanChoice, computerChoice) {
         if (humanChoice === computerChoice) {
