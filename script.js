@@ -24,6 +24,35 @@ function getHumanChoice() {
     }
 }
 
+let humanScore = 0;
+let computerScore = 0;
+
+function playRound(humanChoice, computerChoice) {
+    if (humanChoice === computerChoice) {
+        return;
+    } else if (humanChoice == "rock" && computerChoice == "scissors" 
+        || humanChoice == "paper" && computerChoice == "rock"
+        || humanChoice == "scissors" && computerChoice == "paper") {
+        humanScore++;
+    } else {
+        computerScore++;
+    }
+
+    console.log(humanScore);
+    console.log(computerScore);
+}
+
+let rBtn = document.querySelector("#rock");
+let pBtn = document.querySelector("#paper");
+let sBtn = document.querySelector("#scissors");
+
+rBtn.addEventListener("click", () => playRound("rock", getComputerChoice()));
+pBtn.addEventListener("click", () => playRound("paper", getComputerChoice()));
+sBtn.addEventListener("click", () => playRound("scissors", getComputerChoice()));
+
+
+
+
 // function playGame() {
 //     let humanScore = 0;
 //     let computerScore = 0;
@@ -34,17 +63,17 @@ function getHumanChoice() {
 //         console.log("Computer:" +String(computerScore));
 //     }
 
-    function playRound(humanChoice, computerChoice) {
-        if (humanChoice === computerChoice) {
-            return;
-        } else if (humanChoice == "rock" && computerChoice == "scissors" 
-            || humanChoice == "paper" && computerChoice == "rock"
-            || humanChoice == "scissors" && computerChoice == "paper") {
-            humanScore++;
-        } else {
-            computerScore++;
-        }
-    }
-}
+//     function playRound(humanChoice, computerChoice) {
+//         if (humanChoice === computerChoice) {
+//             return;
+//         } else if (humanChoice == "rock" && computerChoice == "scissors" 
+//             || humanChoice == "paper" && computerChoice == "rock"
+//             || humanChoice == "scissors" && computerChoice == "paper") {
+//             humanScore++;
+//         } else {
+//             computerScore++;
+//         }
+//     }
+// }
 
-playGame();
+// playGame();
