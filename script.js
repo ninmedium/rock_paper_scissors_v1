@@ -26,6 +26,9 @@ function getHumanChoice() {
 
 let humanScore = 0;
 let computerScore = 0;
+let hScoreCard = document.querySelector("#hScore");
+let cScoreCard = document.querySelector("#cScore");
+let winner = document.querySelector("#winner");
 
 function playRound(humanChoice, computerChoice) {
     if (humanChoice === computerChoice) {
@@ -38,8 +41,18 @@ function playRound(humanChoice, computerChoice) {
         computerScore++;
     }
 
-    console.log(humanScore);
-    console.log(computerScore);
+    hScoreCard.textContent = `Human Score: ${humanScore}`;
+    cScoreCard.textContent = `Computer Score: ${computerScore}`;
+
+    if (humanScore == 5) {
+        winner.textContent = "Congratulations! You Win!";
+        humanScore = 0;
+        computerScore = 0;
+    } else if (computerScore == 5) {
+        winner.textContent = "Sorry, you lose :(";
+        humanScore = 0;
+        computerScore = 0;
+    }
 }
 
 let rBtn = document.querySelector("#rock");
