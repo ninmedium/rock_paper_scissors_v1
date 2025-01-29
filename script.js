@@ -46,10 +46,14 @@ function playRound(humanChoice, computerChoice) {
 
     if (humanScore == 5) {
         winner.textContent = "Congratulations! You Win!";
+        winner.style.color = "green";
+        winner.style.fontSize = "20px";
         humanScore = 0;
         computerScore = 0;
     } else if (computerScore == 5) {
         winner.textContent = "Sorry, you lose :(";
+        winner.style.color = "red";
+        winner.style.fontSize = "20px";
         humanScore = 0;
         computerScore = 0;
     }
